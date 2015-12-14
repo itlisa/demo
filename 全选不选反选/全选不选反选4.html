@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0;}
+</style>
+<script>
+window.onload=function(){
+	var oBtn1 = document.getElementById('btn1');
+	var oBtn2 = document.getElementById('btn2');
+	var oBtn3 = document.getElementById('btn3');
+	var oBox = document.getElementById('box');
+	var aInp = oBox.getElementsByTagName('input');
+	//全选
+	oBtn1.onclick=function(){
+		//把所有的多选框的checked变成true
+		for(var i=0;i<aInp.length;i++){
+			aInp[i].checked=true;
+		}
+	};
+	//不选
+	oBtn2.onclick=function(){
+		//把所有的多选框的checked变成false
+		for(var i=0;i<aInp.length;i++){
+			aInp[i].checked=false;
+		}
+	};
+	//反选
+	oBtn3.onclick=function(){
+		//所有的多选框，如果是选中的就不选否则就选中
+		for(var i=0;i<aInp.length;i++){
+			if(aInp[i].checked){
+				aInp[i].checked=false;
+			}else{
+				aInp[i].checked=true;
+			}
+		}
+	};
+};
+</script>
+</head>
+
+<body>
+<input type="button" value="全选" id="btn1" />
+<input type="button" value="不选" id="btn2" />
+<input type="button" value="反选" id="btn3" />
+<br />
+<div id="box">
+    <input type="checkbox" />
+    <input type="checkbox" />
+    <input type="checkbox" />
+    <input type="checkbox" />
+    <input type="checkbox" />
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

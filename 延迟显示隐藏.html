@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0;}
+input{position:absolute; top:100px; left:300px;}
+#box{width:200px; height:200px; background:#399; position:absolute; top:150px; left:300px; display:none;}
+</style>
+<script>
+window.onload=function(){
+	var oBtn = document.getElementById('btn');
+	var oBox = document.getElementById('box');
+	var timer = null;
+	oBtn.onmouseover=function(){
+		timer = setTimeout(function(){
+			oBox.style.display='block';
+		},300);
+	};
+	oBtn.onmouseout=function(){
+		clearTimeout(timer);
+		oBox.style.display='none';
+	};
+};
+</script>
+</head>
+
+<body>
+<input type="button" value="按钮按钮按钮按钮" id="btn" />
+<div id="box"></div>
+</body>
+</html>
+
+
+
+
+
+
+

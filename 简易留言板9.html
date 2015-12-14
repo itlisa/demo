@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+</style>
+<script>
+window.onload=function(){
+	var oTxt = document.getElementById('txt1');
+	var oBtn = document.getElementById('btn1');
+	var oUl = document.getElementById('ul1');
+	var aDel = oUl.getElementsByTagName('a');
+	for(var i=0;i<aDel.length;i++){
+		aDel[i].onclick=function(){
+			oUl.removeChild(this.parentNode);
+		};
+	}
+	oBtn.onclick=function(){
+		if(!oTxt.value)return;
+		
+		var oLi = document.createElement('li');
+		oLi.innerHTML=oTxt.value+'&nbsp; <a href="javascript:;">删除</a>';
+		
+		var oDel = oLi.children[0];
+		oDel.onclick=function(){
+			oUl.removeChild(this.parentNode);
+		};
+		
+		if(oUl.children.length){
+			oUl.insertBefore(oLi,oUl.children[0]);
+		}else{
+			oUl.appendChild(oLi);
+		}
+		oTxt.value='';
+	};
+};
+</script>
+</head>
+
+<body>
+<input type="text" id="txt1" />
+<input type="button" value="按钮" id="btn1" />
+<ul id="ul1">
+	<li>范本3&nbsp;<a href="javascript:;">删除</a></li>
+	<li>范本2&nbsp;<a href="javascript:;">删除</a></li>
+	<li>范本1&nbsp;<a href="javascript:;">删除</a></li>
+</ul>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

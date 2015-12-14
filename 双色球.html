@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0;}
+</style>
+<script>
+function findInArr(arr,num){
+	for(var i=0;i<arr.length;i++){
+		if(arr[i]==num){
+			return true;
+		}
+	}
+	return false;
+}
+function rnd(n,m){
+	return parseInt(n+Math.random()*(m-n));
+}
+
+//容器，装6个数字
+var arr = [];
+//如果数组的长度小于6就插
+while(arr.length<6){
+	//每次要获取一个随机数
+	var num = rnd(1,34);
+	//如果数组里没有这个数字才往里插
+	if(!findInArr(arr,num)){
+		arr.push(num);
+	}
+}
+document.write(arr);
+
+</script>
+</head>
+
+<body>
+</body>
+</html>
+
+
+
+
+
+

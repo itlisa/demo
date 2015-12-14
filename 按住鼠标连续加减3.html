@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0;}
+</style>
+<script>
+window.onload=function(){
+	var oSub = document.getElementsByTagName('input')[0];
+	var oNum = document.getElementsByTagName('input')[1];
+	var oPlus = document.getElementsByTagName('input')[2];
+	var timer = null;
+	oPlus.onmousedown=function(){
+		clearInterval(timer);
+		timer = setInterval(function(){
+			var num =oNum.value;
+			num++;
+			oNum.value=num;
+		},150);
+	};
+	oPlus.onmouseup=function(){
+		clearInterval(timer);
+	};
+	oPlus.onclick=function(){
+		var num =oNum.value;
+		num++;
+		oNum.value=num;
+	};
+	oSub.onmousedown=function(){
+		clearInterval(timer);
+		timer = setInterval(function(){
+			var num =oNum.value;
+			num--;
+			oNum.value=num;
+		},150);
+	};
+	oSub.onmouseup=function(){
+		clearInterval(timer);
+	};
+	oSub.onclick=function(){
+		var num =oNum.value;
+		num--;
+		oNum.value=num;
+	};
+};
+</script>
+</head>
+
+<body>
+<input type="button" value="-" />
+<input type="text" value="0" />
+<input type="button" value="+" />
+</body>
+</html>
+
+
+
+
+
+
+
+

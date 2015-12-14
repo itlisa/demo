@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com">
+<meta name="copyright" content="智能社 - zhinengshe.com">
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0;}
+#box select{display:none;}
+</style>
+<script>
+window.onload=function(){
+	var oS = document.getElementById('s1');
+	var oBox = document.getElementById('box');
+	var aS = oBox.getElementsByTagName('select');
+	oS.onchange=function(){
+		for(var i=0;i<aS.length;i++){
+			aS[i].style.display='none';
+		}
+		aS[this.value].style.display='block';
+	};
+};
+</script>
+</head>
+
+<body>
+<select id="s1">
+	<option value="0">北京</option>
+	<option value="1">上海</option>
+	<option value="2">河北</option>
+</select>
+<div id="box">
+	<select style="display:block;">
+    	<option>朝阳</option>
+    	<option>海淀</option>
+    	<option>通州</option>
+    	<option>丰台</option>
+    </select>
+	<select>
+    	<option>嘉定</option>
+    	<option>普陀</option>
+    	<option>徐汇</option>
+    	<option>浦东</option>
+    </select>
+    <select>
+    	<option>邢台</option>
+    	<option>张家口</option>
+    	<option>石家庄</option>
+    	<option>保定</option>
+    </select>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

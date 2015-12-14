@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			padding:0;
+			margin:0;
+			list-style:none;
+		}
+		#main{
+			width:408px;
+			margin:100px auto;
+		}
+		li{
+			width:100px;
+			height:30px;
+			float:left;
+			border:1px solid #000;
+			text-align: center;
+			line-height:30px;
+			position:relative;
+			top:0;
+			left:0;
+			margin-left:-1px;
+			cursor:pointer;
+			background:#fcc;
+		}
+		.son{
+			display:none;
+			position:absolute;
+			top:31px;
+			left:0;
+			
+		}
+		.son li{
+			margin-top:-1px;
+		}
+		.secson{
+			display:none;
+			position:absolute;
+			top:0;
+			left:100px;
+		}
+	</style>
+	<script>
+	window.onload=function(){
+		var aLi=document.getElementsByTagName('li');
+		var timer=null;
+		for(var i=0;i<aLi.length;i++){
+			aLi[i].onmouseover=function(){
+				clearTimeout(timer);
+				var _this=this;
+				this.timer=setTimeout(function(){
+					var oUl=_this.getElementsByTagName('ul')[0];
+					if(oUl){
+						oUl.style.display="block";
+					}
+				},500)
+			};
+			aLi[i].onmouseout=function(){
+				var oUl=this.getElementsByTagName('ul')[0];
+				clearTimeout(timer);
+				var _this=this;
+				this.timer=setTimeout(function(){
+					var oUl=_this.getElementsByTagName('ul')[0];
+					if(oUl){
+						oUl.style.display="none";
+					}
+				},500)
+			};
+		};
+	};
+	</script>
+</head>
+<body>
+	<ul id="main">
+		<li>日期</li>
+		<li>年龄
+			<ul class="son">
+				<li>住址</li>
+				<li>工作年限
+					<ul class="secson">
+						<li>我叫李爽</li>
+						<li>今年20</li>
+						<li>家住北京</li>
+						<li>12k</li>
+					</ul>
+				</li>
+				<li>工作时间</li>
+				<li>期望薪资</li>
+			</ul>
+		</li>
+		<li>姓名</li>
+		<li>电话</li>
+	</ul>
+</body>
+</html>
